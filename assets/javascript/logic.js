@@ -1,32 +1,34 @@
 var config = {
-    apiKey: "AIzaSyAUDY8Df6KFsWUf3aTbs0JV2M3HDHODRt4",
-    authDomain: "traintime-a4af9.firebaseapp.com",
-    databaseURL: "https://traintime-a4af9.firebaseio.com",
-    projectId: "traintime-a4af9",
-    storageBucket: "",
-    messagingSenderId: "904699414954",
-    appId: "1:904699414954:web:6aa9ba54c88cd0e74ac3d3"
+    apiKey: "AIzaSyBfV6QjznhGES4tntZFYOJ__a9R4fs0lz8",
+    authDomain: "uw-bootcamp-191d8.firebaseapp.com",
+    databaseURL: "https://uw-bootcamp-191d8.firebaseio.com",
+    storageBucket: "uw-bootcamp-191d8.appspot.com",
 };
-
-firebase.initializeApp(config);
-
-var database = firebase.database();
-
-var train = "";
-var destination = "";
-var time = "";
-var frequency = "";
-
-$("add-train-btn").on("click", function(event) {
-    event.preventDeafault();
-    train = $("train-input").val().trim();
-    destination =$("destination-input").val().trim();
-    frequency = $("frquency-input").val().trim();
-
-    database.ref().push({
-        train: train,
-        destination: destination,
-        time: time,
-        frequency: frequency
-    });
+    firebase.initializeApp(config);
+    
+    var dataRef = firebase.database();
+    
+    var train = "";
+    var destination = "";
+    var time = "";
+    var frequency = "";
+    
+    $("#addTrain").on("click", function(event) {
+    
+        event.preventDefault();
+    
+        train = $("#trainInput").val().trim();
+        destination = $("#destinationInput").val().trim();
+        time = $("#timeInput").val().trim();
+        frequency = $("#frequencyInput").val().trim();
+    
+        dataRef.ref().push({
+            
+            train: train,
+            destination: destination,
+            time: time,
+            frequency: frequency,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        });
 });
+
