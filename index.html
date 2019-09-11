@@ -28,22 +28,22 @@
                             <h3 class="panel-title">Add Train</h3>
                         </div>
                         <div class="panel body">
-                            <form role="form">
+                            <form id="train">
                             <div class="form-group row">
                             <label for="train-input">Train name:</label>
-                            <input class="form-control" id="trainInput" type="text">
+                            <input class="form-control" id="trainInput" type="text" placeholder="Enter up to 25 letters or numbers." pattern="[a-zA-Z\s]{3,25}" required>
                         </div>
                         <div class="form-group row">
                             <label for="destination-input">Destination:</label>
-                            <input class="form-control" id="destinationInput" type="text">
+                            <input class="form-control" id="destinationInput" type="text" placeholder="Enter up to 25 letters or numbers." pattern="[a-zA-Z\s]{3,25}" required>
                         </div>
                         <div class="form-group row">
                             <label for="time-input">First Train Time (HH:mm):</label>
-                            <input class="form-control" id="timeInput" type="type">
+                            <input class="form-control" id="timeInput" type="type" placeholder="HH:mm" pattern="[0-9:]{5}" required>
                         </div>
                         <div class="form-group row">
                             <label for="frequency-input">Frequency:</label>
-                            <input class="form-control" id="frequencyInput" type="text" >
+                            <input class="form-control" id="frequencyInput" type="text" placeholder="Enter minutes." pattern="[0-9]{1,2}" required>
                         </div>
                         <button class="btn btn-default" id="addTrain" type="submit">Add Train</button>
                         </form>
@@ -56,14 +56,14 @@
                     <h3 class="panel-title">Current Train Scheduler</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <table class="table table-striped" id="trainTable">
                         <thead>
                             <tr>
-                            <th>Train name</th>
-                            <th>Destination</th>
-                            <th>Frequncy(min)</th>
-                            <th>Next Arrival</th>
-                            <th>Minutes Away</th>
+                            <th scope="col">Train name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequncy(min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
                             </tr>
                         </thead>
                         <tbody>
