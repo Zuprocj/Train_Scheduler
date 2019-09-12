@@ -6,7 +6,12 @@ Dealing with firebase proved difficult.  I couldn't set up a new Firebase databa
 
 # Getting started
 
-Due to API issues, I am unable to deply the website app.  However, I have enabled the TA's of the class as collaborators and they are able to look over and grade the code.
+Use Gitbash to clone repo
+Go to my repo https://github.com/Zuprocj?tab=repositories and clone Train_Scheduler repo or use this link to clone repo  
+https://github.com/Zuprocj/Train_Scheduler.git
+
+Also GifTasic is deployed onto Github Pages.
+https://zuprocj.github.io/Train_Scheduler/
 
 
 # Built with
